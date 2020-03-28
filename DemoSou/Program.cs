@@ -1,7 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Xml;
 
 namespace DemoSou
 {
@@ -9,28 +11,28 @@ namespace DemoSou
     {
         static void Main(string[] args)
         {
-            // 01
-            string x = File.ReadAllText(@"D:\vn.txt");
-            //string regex = "\\\"[a-zA-Z\\d_]+\\\"\\:\\{\"value\\\"\\:\\\"[a-zA-Z\\d\\sÄäÖöÜüẞß_]+\\\"\\}";
+            //// 01
+            //string x = File.ReadAllText(@"D:\vn.txt");
+            ////string regex = "\\\"[a-zA-Z\\d_]+\\\"\\:\\{\"value\\\"\\:\\\"[a-zA-Z\\d\\sÄäÖöÜüẞß_]+\\\"\\}";
+            ////string replace = @"$1:{value:""***""}";
+            ////("[\w\d]+":{\"value\":)(\"[\w\d]*\")(})
+            ////https://www.mikesdotnetting.com/article/46/c-regular-expressions-cheat-sheet
+
+            //string pattern = @"(""[^""]*""):{""value"":""([^""]*)""}";
             //string replace = @"$1:{value:""***""}";
-            //("[\w\d]+":{\"value\":)(\"[\w\d]*\")(})
-            //https://www.mikesdotnetting.com/article/46/c-regular-expressions-cheat-sheet
 
-            string pattern = @"(""[^""]*""):{""value"":""([^""]*)""}";
-            string replace = @"$1:{value:""***""}";
+            //string input = @"{""SNR"":{""value"":""9999999""}}";
 
-            string input = @"{""SNR"":{""value"":""9999999""}}";
-
-            var act = Regex.Replace(x, pattern, replace);
+            //var act = Regex.Replace(x, pattern, replace);
 
 
-            // 02
+            //// 02
 
-            x = ProcessString(x, new [] { "TYP", "DOK", "BRI" });
+            //x = ProcessString(x, new [] { "TYP", "DOK", "BRI" });
 
-            //var x1 = Regex.Replace(x, regex, replace);
+            ////var x1 = Regex.Replace(x, regex, replace);
 
-            Console.WriteLine("Hello World!");
+            //Console.WriteLine("Hello World!");
         }
 
         private static string ProcessString(string input, string[] sensitive)
@@ -57,5 +59,16 @@ namespace DemoSou
 
             return input;
         }
+
+        //public static void TrySaveUtf8()
+        //{
+        //    XmlWriterSettings
+        //    XmlWriter x = new XmlWriter();
+        //    x.e
+        //    using (var tr = new StreamWriter("",false,Encoding.))
+        //    {
+        //        var x = tr.Encoding;
+        //    }
+        //}
     }
 }
