@@ -33,6 +33,10 @@ namespace DemoSou
             ////var x1 = Regex.Replace(x, regex, replace);
 
             //Console.WriteLine("Hello World!");
+
+            string x = "nnnccnn";
+            ChangeS(x);
+            Console.WriteLine(x);
         }
 
         private static string ProcessString(string input, string[] sensitive)
@@ -70,5 +74,11 @@ namespace DemoSou
         //        var x = tr.Encoding;
         //    }
         //}
+
+        private static void ChangeS(string x)
+        {
+            x = x.Replace("c", string.Empty);
+            Console.WriteLine(x);
+        }
     }
 }
